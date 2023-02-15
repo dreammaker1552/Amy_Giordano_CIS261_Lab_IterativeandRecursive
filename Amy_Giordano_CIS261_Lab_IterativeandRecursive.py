@@ -5,22 +5,28 @@
 
 
 
-# Factorial results using an iterative function
-def factorial_iterative(n):
-    result = 1
-    for i in range(1, n + 1):
-        result *= i
-    return result
-    
-# Factorial results using a recursive function
-def factorial_recursive(n):
-    if n == 1:
+# Iterative function to calculate the factorial
+def fact_iterative(n):
+    f = 1 
+    for i in range(1, n+1):
+        f = f * i 
+    return f 
+
+# Recursive function to calculate the factorial
+def fact_recursive(n):
+    if n == 0 or n == 1:
         return 1
     else:
-        return n * factorial_recursive(n - 1)
-    for num in [0, 5, 10, 25, 50, 100]:
-        print("Factorial of", num, "using iterative function:", factorial_iterative(num))
-        print("Factorial of", num, "using recursive function:", factorial_recursive(num))
+        return n * fact_recursive(n-1)
 
-
-
+# Call each function from a print statement five times
+print(fact_recursive(0))
+print(fact_iterative(0))
+print(fact_recursive(5))
+print(fact_iterative(5))
+print(fact_recursive(10))
+print(fact_iterative(10))
+print(fact_recursive(25))
+print(fact_iterative(25))
+print(fact_recursive(50))
+print(fact_iterative(50))
